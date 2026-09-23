@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Muhammad Kumail Naqvi | Digital Marketing & Tech Expert Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.04); }
+        }
+        .floating-effect {
+            animation: float 5s ease-in-out infinite;
+        }
+        .pulse-bg {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-indigo-500/20">
+                    SK
+                </div>
+                <div>
+                    <span class="font-bold text-lg text-slate-900 dark:text-white block leading-tight">Syed M. Kumail</span>
+                    <span class="text-xs text-indigo-600 dark:text-indigo-400 font-medium">Digital Expert & Developer</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <a href="#hero" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Home</a>
+                <a href="#services" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Services</a>
+                <a href="#workflow" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">My Process</a>
+                <a href="#showcase" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Portfolio</a>
+                <a href="#mythsvsfacts" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Facts & Myths</a>
+                <a href="#packages" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Packages</a>
+                <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg text-amber-400"></i>
+                </button>
+
+                <a href="https://wa.me/923144091934" target="_blank" class="hidden sm:flex px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm shadow-md shadow-emerald-600/20 transition items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp</span>
+                </a>
+
+                <button id="menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-3">
+            <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600">Home</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600">Services</a>
+            <a href="#workflow" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600">My Process</a>
+            <a href="#showcase" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600">Portfolio Showcase</a>
+            <a href="#mythsvsfacts" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600">Facts & Myths</a>
+            <a href="#packages" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600">Packages</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600">Contact</a>
+            <div class="pt-2">
+                <a href="https://wa.me/923144091934" target="_blank" class="w-full text-center px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-medium shadow-md flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp Me (+92 314 4091934)</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden text-center">
+        <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-indigo-400/20 dark:bg-indigo-600/10 rounded-full blur-3xl pointer-events-none pulse-bg"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-violet-400/20 dark:bg-violet-600/10 rounded-full blur-3xl pointer-events-none pulse-bg" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-indigo-100/90 dark:bg-indigo-950/80 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-sm">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 animate-pulse"></span>
+                <span>Available For Freelance & Halal Projects</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+                Hi, I'm <span class="bg-gradient-to-r from-indigo-600 via-violet-600 to-blue-600 bg-clip-text text-transparent">Syed Muhammad Kumail Naqvi</span>
+            </h1>
+
+            <p class="text-xl sm:text-3xl font-semibold text-slate-700 dark:text-indigo-200 italic max-w-2xl mx-auto py-2">
+                "Turning Relentless Effort Into Digital Excellence"
+            </p>
+
+            <p class="text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                Empowering your brand with high-impact Digital Marketing, modern Web Design, SEO mastery, Meta Ads, Graphic Design, and comprehensive tech solutions built through hard work and dedication.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-5 pt-4">
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-600/30 transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                    <span>Explore Services</span>
+                    <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+                <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-white font-semibold border border-slate-200 dark:border-slate-800 shadow-sm transition text-center flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-eye text-indigo-600 dark:text-indigo-400"></i>
+                    <span>View Portfolio</span>
+                </a>
+            </div>
+
+            <div class="pt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-slate-200 dark:border-slate-800 max-w-2xl mx-auto">
+                <div class="text-center p-4 rounded-2xl bg-white/60 dark:bg-slate-900/60 shadow-sm border border-slate-100 dark:border-slate-800">
+                    <h4 class="text-3xl font-bold text-slate-900 dark:text-white mb-1">100%</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Dedication & Hard Work</p>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-white/60 dark:bg-slate-900/60 shadow-sm border border-slate-100 dark:border-slate-800">
+                    <h4 class="text-3xl font-bold text-slate-900 dark:text-white mb-1">24/7</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Client Support</p>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-white/60 dark:bg-slate-900/60 shadow-sm border border-slate-100 dark:border-slate-800">
+                    <h4 class="text-3xl font-bold text-slate-900 dark:text-white mb-1">Top-Tier</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Quality Output</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-white/70 dark:bg-slate-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-semibold tracking-wide uppercase border border-indigo-200 dark:border-indigo-800">My Expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Comprehensive Digital Services</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">Tailored solutions engineered to elevate your business presence, boost sales, and streamline operations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-100 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-indigo-600/30">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Social Media Marketing (SMM)</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-6">Build an engaging community, foster brand loyalty, and dominate platforms like Facebook, Instagram, LinkedIn, and TikTok with strategic content campaigns.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4 font-medium">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Content Strategy & Scheduling</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Audience Engagement & Growth</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-100 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-violet-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-violet-600/30">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Search Engine Optimization (SEO)</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-6">Rank higher on Google search results, drive organic traffic to your website, and turn searchers into loyal, long-term paying customers.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4 font-medium">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-violet-500"></i><span>Keyword Research & On-Page SEO</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-violet-500"></i><span>Technical SEO & Backlinks</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-100 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-blue-600/30">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Professional Web Design</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-6">Create stunning, responsive, fast-loading, and conversion-optimized websites that leave a lasting impression on every visitor.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4 font-medium">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-blue-500"></i><span>Landing Pages & Portfolios</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-blue-500"></i><span>Mobile-First Responsive Layouts</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-100 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-pink-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-pink-600/30">
+                            <i class="fa-solid fa-rectangle-ad"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Meta Ads (FB & Instagram)</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-6">Launch highly targeted ad campaigns with precision audience targeting to maximize your return on ad spend (ROAS) and generate quality leads.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4 font-medium">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-pink-500"></i><span>Audience Segmentation & A/B Testing</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-pink-500"></i><span>Conversion Tracking & Setup</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-100 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-amber-600/30">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Graphic Design & Branding</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-4">Captivating visual graphics designed to make your brand stand out instantly across all digital and print mediums.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 text-[11px] font-semibold border border-amber-200 dark:border-amber-800">Branding</span>
+                            <span class="px-2.5 py-1 rounded-md bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 text-[11px] font-semibold border border-amber-200 dark:border-amber-800">Social Posts</span>
+                            <span class="px-2.5 py-1 rounded-md bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 text-[11px] font-semibold border border-amber-200 dark:border-amber-800">Banners</span>
+                            <span class="px-2.5 py-1 rounded-md bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 text-[11px] font-semibold border border-amber-200 dark:border-amber-800">UI/UX</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4 font-medium">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-amber-500"></i><span>High-Resolution Graphics</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-amber-500"></i><span>Custom Vector Artwork</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-100 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-teal-600/30">
+                            <i class="fa-solid fa-keyboard"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Typing & Computer Solutions</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-6">Fast, accurate data entry, document formatting, transcription services, and expert troubleshooting for computer & tech solutions.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4 font-medium">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-teal-500"></i><span>Speed Typing & Data Entry</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-teal-500"></i><span>Tech Support & Solutions</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="workflow" class="py-24 bg-slate-50 dark:bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-semibold tracking-wide uppercase border border-indigo-200 dark:border-indigo-800">My Methodology</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">How I Maintain & Deliver Quality Work</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">A transparent look at my step-by-step process for managing graphic design, web design, and continuous maintenance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm relative">
+                    <div class="absolute -top-4 left-8 w-10 h-10 rounded-xl bg-indigo-600 text-white font-bold flex items-center justify-center text-lg shadow-md">
+                        01
+                    </div>
+                    <div class="pt-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Discovery & Strategy</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            We start with a detailed consultation. I analyze your business goals, target audience, and project scope to create a solid roadmap for your graphic design or web project.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm relative">
+                    <div class="absolute -top-4 left-8 w-10 h-10 rounded-xl bg-violet-600 text-white font-bold flex items-center justify-center text-lg shadow-md">
+                        02
+                    </div>
+                    <div class="pt-4">
+                        <div class="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950 text-violet-600 dark:text-violet-400 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Execution & Crafting</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            For graphic design, I create eye-catching visual concepts. For web design, I code responsive, lightning-fast layouts. Every asset undergoes strict quality checks before review.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm relative">
+                    <div class="absolute -top-4 left-8 w-10 h-10 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center text-lg shadow-md">
+                        03
+                    </div>
+                    <div class="pt-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Maintenance & Support</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            My work doesn't end at delivery. I provide ongoing maintenance, security updates, design refinements, and 24/7 support to ensure your digital assets remain top-performing.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="py-24 bg-white dark:bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-semibold tracking-wide uppercase border border-indigo-200 dark:border-indigo-800">Portfolio Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Explore My Design & Web Works</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">Filter through examples of my graphic design categories and responsive web solutions.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+                <button onclick="filterPortfolio('all')" class="filter-btn px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm shadow-md transition" data-filter="all">All Projects</button>
+                <button onclick="filterPortfolio('graphic')" class="filter-btn px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition" data-filter="graphic">Graphic Design</button>
+                <button onclick="filterPortfolio('web')" class="filter-btn px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition" data-filter="web">Web Design</button>
+                <button onclick="filterPortfolio('branding')" class="filter-btn px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition" data-filter="branding">Brand Identity</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="portfolio-item group bg-slate-50 dark:bg-slate-950 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-xl" data-category="graphic">
+                    <div class="h-56 bg-gradient-to-tr from-amber-500 to-pink-500 relative flex items-center justify-center p-6 text-white overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <i class="fa-solid fa-rectangle-ad text-4xl mb-2"></i>
+                            <h4 class="font-bold text-xl">Social Media Ad Creative</h4>
+                            <p class="text-xs text-white/90">High-converting Instagram & Facebook post design</p>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="px-2.5 py-1 rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 text-xs font-semibold">Graphic Design</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">E-Commerce Promotional Campaign</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm">Created vibrant product promotional banners that boosted client CTR by 45%.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item group bg-slate-50 dark:bg-slate-950 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-xl" data-category="web">
+                    <div class="h-56 bg-gradient-to-tr from-blue-600 to-indigo-600 relative flex items-center justify-center p-6 text-white overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <i class="fa-solid fa-laptop-code text-4xl mb-2"></i>
+                            <h4 class="font-bold text-xl">Modern Business Web Design</h4>
+                            <p class="text-xs text-white/90">Fully responsive, lightning-fast HTML5/Tailwind</p>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="px-2.5 py-1 rounded-md bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold">Web Design</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Corporate Agency Landing Page</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm">Designed and developed a conversion-optimized corporate landing page with smooth animations.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item group bg-slate-50 dark:bg-slate-950 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-xl" data-category="branding">
+                    <div class="h-56 bg-gradient-to-tr from-purple-600 to-violet-500 relative flex items-center justify-center p-6 text-white overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <i class="fa-solid fa-palette text-4xl mb-2"></i>
+                            <h4 class="font-bold text-xl">Complete Brand Kit</h4>
+                            <p class="text-xs text-white/90">Logo, color palette, and typography system</p>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-xs font-semibold">Brand Identity</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Tech Startup Visual Branding</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm">Developed a sophisticated brand identity kit including custom vectors and brand guidelines.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item group bg-slate-50 dark:bg-slate-950 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-xl" data-category="graphic">
+                    <div class="h-56 bg-gradient-to-tr from-emerald-600 to-teal-500 relative flex items-center justify-center p-6 text-white overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <i class="fa-solid fa-images text-4xl mb-2"></i>
+                            <h4 class="font-bold text-xl">Social Media Feed Design</h4>
+                            <p class="text-xs text-white/90">Cohesive 9-grid Instagram layout</p>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="px-2.5 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">Graphic Design</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Instagram Grid & Story System</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm">Crafted high-engagement Instagram templates designed to build loyal audience interaction.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item group bg-slate-50 dark:bg-slate-950 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-xl" data-category="web">
+                    <div class="h-56 bg-gradient-to-tr from-indigo-600 to-violet-600 relative flex items-center justify-center p-6 text-white overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <i class="fa-solid fa-store text-4xl mb-2"></i>
+                            <h4 class="font-bold text-xl">E-Commerce Web Portal</h4>
+                            <p class="text-xs text-white/90">Sleek online storefront UI design</p>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="px-2.5 py-1 rounded-md bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold">Web Design</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Boutique Storefront Website</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm">Built a clean, mobile-friendly e-commerce web design with intuitive product categorization.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item group bg-slate-50 dark:bg-slate-950 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-xl" data-category="branding">
+                    <div class="h-56 bg-gradient-to-tr from-rose-600 to-orange-500 relative flex items-center justify-center p-6 text-white overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <i class="fa-solid fa-bullseye text-4xl mb-2"></i>
+                            <h4 class="font-bold text-xl">Logo & Vector Art</h4>
+                            <p class="text-xs text-white/90">Scalable vector brand symbols</p>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-xs font-semibold">Brand Identity</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Minimalist Logo Design</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm">Created memorable, timeless logo designs tailored for modern digital businesses.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-me" class="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-semibold tracking-wide uppercase border border-indigo-200 dark:border-indigo-800">Unmatched Value</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Why Choose Me Over Other Service Providers?</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">See the distinct advantages you get when working with me compared to standard generic agencies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <!-- Other Providers -->
+                <div class="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-red-200 dark:border-red-900/50 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Typical Agencies & Providers</h3>
+                                <p class="text-xs text-red-500 font-medium">What you usually get elsewhere</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                                <span><strong>Generic Templates:</strong> Reusing the exact same design layout for dozens of clients without personalization.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                                <span><strong>Ghosting & Slow Communication:</strong> Days of waiting for a simple reply or update after project payment.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                                <span><strong>Hidden Costs:</strong> Extra charges added unexpectedly for minor revisions or essential features.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                                <span><strong>Short-term Focus:</strong> Quick work focused only on closing deals rather than building your brand's long-term reputation.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Syed Muhammad Kumail -->
+                <div class="bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-900 text-white p-8 sm:p-10 rounded-3xl border-2 border-indigo-500 shadow-xl flex flex-col justify-between relative">
+                    <div class="absolute -top-4 right-8 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
+                        Your Advantage
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-indigo-600/30">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Syed Muhammad Kumail</h3>
+                                <p class="text-xs text-indigo-300 font-medium">Dedicated Quality & Halal Earnings</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-sm text-indigo-100">
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span><strong>100% Custom Tailored Solutions:</strong> Every graphic, web page, and strategy is custom-built from scratch for your brand.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span><strong>Direct 24/7 Communication:</strong> You speak and deal directly with me. Fast, reliable updates whenever you need them.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span><strong>Transparent Pricing & Honest Effort:</strong> Absolute clarity with zero hidden fees and relentless hard work dedicated to your project.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span><strong>Halal & Ethical Commitment:</strong> Driven by honesty, trust, and a sincere commitment to earning honest livelihood (Rizq-e-Halal).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mythsvsfacts" class="py-24 relative overflow-hidden bg-slate-900 text-white">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold tracking-wide uppercase border border-indigo-500/30">Transparency First</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Why Choose Me? Facts vs. Myths</h2>
+                <p class="text-slate-300 text-base sm:text-lg">Don't fall for hollow promises. Here is the absolute truth about digital marketing service providers and how I do things differently.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                
+                <div class="bg-slate-800/80 backdrop-blur-md p-8 rounded-3xl border border-red-500/20 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl font-bold border border-red-500/30">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-red-400">Common Myths</h3>
+                        </div>
+                        <ul class="space-y-4 text-slate-300 text-sm">
+                            <li class="flex items-start space-x-3 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                <i class="fa-solid fa-xmark text-red-400 mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block mb-1">"Overnight Success & Instant Million Views"</strong>
+                                    <span class="text-slate-400 text-xs">Many agencies promise you viral fame or top Google rankings in just 24 hours using shady shortcuts.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                <i class="fa-solid fa-xmark text-red-400 mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block mb-1">"Fake Followers & Bot Traffic Guarantee"</strong>
+                                    <span class="text-slate-400 text-xs">Buying cheap bot followers that look good on paper but yield zero engagement, zero sales, and ruin your page reputation.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                <i class="fa-solid fa-xmark text-red-400 mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block mb-1">"Hidden Fees & Generic Templates"</strong>
+                                    <span class="text-slate-400 text-xs">Charging low base prices upfront and then adding hidden costs while delivering cookie-cutter generic templates.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-900/80 to-slate-800/90 backdrop-blur-md p-8 rounded-3xl border border-indigo-500/30 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl font-bold border border-indigo-500/30">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-indigo-300">The Facts (My Approach)</h3>
+                        </div>
+                        <ul class="space-y-4 text-slate-200 text-sm">
+                            <li class="flex items-start space-x-3 bg-slate-900/60 p-4 rounded-xl border border-indigo-500/20">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block mb-1">"Transparent Reporting & Real Organic Growth"</strong>
+                                    <span class="text-slate-300 text-xs">I provide honest, verifiable analytics, honest effort, and structured strategies designed for sustainable long-term success.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 bg-slate-900/60 p-4 rounded-xl border border-indigo-500/20">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block mb-1">"Relentless Hard Work & Dedicated Focus"</strong>
+                                    <span class="text-slate-300 text-xs">True digital excellence comes from hard work. I personally dedicate time and precision to every single project I take on.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 bg-slate-900/60 p-4 rounded-xl border border-indigo-500/20">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block mb-1">"Affordable Pricing & Tailored Custom Solutions"</strong>
+                                    <span class="text-slate-300 text-xs">Clear pricing with zero hidden costs. Every design and campaign is custom-built to match your exact business goals.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="py-24 bg-white dark:bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-semibold tracking-wide uppercase border border-indigo-200 dark:border-indigo-800">Investment Plans</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Affordable Service Packages</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">High-value service tiers crafted to fit your budget without compromising on top-notch quality.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                
+                <div class="bg-slate-50 dark:bg-slate-950 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition">
+                    <div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-1">Starter Pack</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Ideal for small businesses & startups</p>
+                            <div class="mt-4 flex items-baseline justify-center">
+                                <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">$99</span>
+                                <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">/ project</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Basic SMM Strategy (1 Platform)</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>5 Custom Graphic Posts</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Basic Data Entry / Typing Work</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Email Support</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full py-3.5 rounded-2xl bg-white dark:bg-slate-900 hover:bg-indigo-50 dark:hover:bg-slate-800 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 font-semibold text-center transition shadow-sm">
+                        Choose Starter
+                    </a>
+                </div>
+
+                <div class="bg-gradient-to-b from-indigo-900 to-slate-900 text-white rounded-3xl p-8 border-2 border-indigo-500 shadow-2xl flex flex-col justify-between relative transform md:-translate-y-2">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase shadow-md">
+                        Most Popular
+                    </div>
+                    <div>
+                        <div class="text-center mb-6 pt-2">
+                            <h3 class="text-lg font-bold text-white mb-1">Professional Growth</h3>
+                            <p class="text-xs text-indigo-200">For businesses ready to scale up</p>
+                            <div class="mt-4 flex items-baseline justify-center">
+                                <span class="text-3xl sm:text-4xl font-extrabold text-white">$249</span>
+                                <span class="text-indigo-200 text-xs ml-1">/ project</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-indigo-100 mb-8 border-t border-indigo-800 pt-6">
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400"></i><span>Full SMM (2 Platforms + Scheduling)</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400"></i><span>On-Page SEO Optimization</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400"></i><span>Custom Landing Page / Website Design</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400"></i><span>Meta Ads Setup & Campaign Mgmt</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400"></i><span>10 Premium Graphic Designs</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-center transition shadow-lg shadow-indigo-600/30">
+                        Choose Professional
+                    </a>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-950 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition">
+                    <div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-1">Enterprise VIP</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Complete digital transformation</p>
+                            <div class="mt-4 flex items-baseline justify-center">
+                                <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">$499</span>
+                                <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">/ project</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Full-Scale Multi-Platform SMM</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Advanced SEO & Rank Tracking</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Advanced Web Design & Tech Solutions</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>High-Converting Meta Ads Strategy</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>Unlimited Graphics & Branding Kit</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-600 dark:text-indigo-400"></i><span>24/7 Priority Support</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full py-3.5 rounded-2xl bg-white dark:bg-slate-900 hover:bg-indigo-50 dark:hover:bg-slate-800 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 font-semibold text-center transition shadow-sm">
+                        Choose Enterprise
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-semibold tracking-wide uppercase border border-indigo-200 dark:border-indigo-800">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Let's Build Something Great Together</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">Have a project in mind or need expert digital marketing & tech solutions? Contact me directly today!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Contact Information</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mb-8">Reach out through any of the channels below or fill out the form. I'm always ready to discuss your business growth.</p>
+
+                        <div class="space-y-6">
+                            <a href="mailto:syedmuhammadk14@gmail.com" class="flex items-center space-x-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 transition group">
+                                <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-lg shadow-md group-hover:scale-105 transition">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-semibold text-slate-400">Direct Email</span>
+                                    <span class="text-sm font-bold text-slate-800 dark:text-slate-200 break-all">syedmuhammadk14@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/923144091934" target="_blank" class="flex items-center space-x-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 transition group">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-105 transition">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-semibold text-slate-400">WhatsApp Number</span>
+                                    <span class="text-sm font-bold text-slate-800 dark:text-slate-200">+92 314 4091934</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+                        <a href="https://wa.me/923144091934?text=Hello%20Syed%20Muhammad%20Kumail%2C%20I%20want%20to%20discuss%20digital%20marketing%20services%20with%20you." target="_blank" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-center shadow-lg shadow-emerald-600/30 transition flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Chat Instantly on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-indigo-600 text-sm font-medium text-slate-900 dark:text-white transition" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-indigo-600 text-sm font-medium text-slate-900 dark:text-white transition" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Service Required</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-indigo-600 text-sm font-medium text-slate-900 dark:text-white transition">
+                                <option value="SMM">Social Media Marketing (SMM)</option>
+                                <option value="SEO">Search Engine Optimization (SEO)</option>
+                                <option value="Web Design">Web Design & Landing Pages</option>
+                                <option value="Meta Ads">Meta Ads (FB & Instagram)</option>
+                                <option value="Graphic Design">Graphic Design & Branding</option>
+                                <option value="Typing & Tech">Typing & Computer Solutions</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Your Message</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-indigo-600 text-sm font-medium text-slate-900 dark:text-white transition resize-none" placeholder="Tell me about your project requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold shadow-lg shadow-indigo-600/30 transition flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+
+                        <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-sm font-medium text-center">
+                            Thank you! Your message has been prepared. Redirecting you to WhatsApp for instant reply...
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                    SK
+                </div>
+                <div>
+                    <span class="text-white font-bold text-sm block">Syed Muhammad Kumail Naqvi</span>
+                    <span class="text-xs text-slate-500">Digital Marketing & Tech Solutions</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 text-center">
+                &copy; 2026 Syed Muhammad Kumail Naqvi. All Rights Reserved. Built with relentless hard work & dedication.
+            </p>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/923144091934" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-emerald-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                </a>
+                <a href="mailto:syedmuhammadk14@gmail.com" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-indigo-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-envelope text-base"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Theme Toggle Script
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check user preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Portfolio Filter Script
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                    btn.classList.add('bg-indigo-600', 'text-white');
+                } else {
+                    btn.classList.remove('bg-indigo-600', 'text-white');
+                    btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value.trim();
+
+            const successBox = document.getElementById('form-success');
+            successBox.classList.remove('hidden');
+
+            const whatsappText = `Hello Syed Muhammad Kumail Naqvi,%0A%0AMy Name: ${encodeURIComponent(name)}%0AMy Email: ${encodeURIComponent(email)}%0AService Interested: ${encodeURIComponent(service)}%0AMessage: ${encodeURIComponent(message)}`;
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/923144091934?text=${whatsappText}`, '_blank');
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
