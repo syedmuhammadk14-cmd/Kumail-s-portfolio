@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://syedmuhammadk14-cmd.github.io/Kumail-s-portfolio/sitemap.xml
